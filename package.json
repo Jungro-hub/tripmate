@@ -1,0 +1,8 @@
+{
+  "name": "tripmate",
+  "version": "1.0.0",
+  "description": "This web service is connect traveler eachother.",
+  "main": "index.js",
+  "author": "Jungro Lee",
+  "license": "ISC"
+}
