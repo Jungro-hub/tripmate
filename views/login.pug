@@ -1,0 +1,13 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=routes.login, method="post")
+            fieldset
+                legend 로그인
+                    label ID : 
+                        input(type="email", autocomplete="off", name="email", placeholder="이메일 입력")
+                    label 비밀번호 : 
+                        input(type="password", autocomplete="off", name="password", placeholder="비밀번호 입력")
+                        input(type="submit", value="로그인")
+        include partials/socialLogin

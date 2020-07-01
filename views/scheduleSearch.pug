@@ -1,0 +1,20 @@
+extends layouts/main
+
+block content
+    form(action=routes.scheduleSearch, method="get")
+        fieldset
+            legend 방문객 일정 찾기
+                label 일정
+                    input(type="date", autocomplete="off", placeholder="일정 입력", name="date")
+                label 장소
+                    input(type="text", autocomplete="off", placeholder="도시 이름 입력", name="city")
+                label 대화 언어
+                    input(type="text", autocomplete="off", placeholder="대화가 가능한 언어 입력", name="language")
+                legend 여행 스타일
+                    label 전통체험
+                        input(type="checkbox", value="traditional", name="thema")
+                    label K-문화
+                        input(type="checkbox", value="k-culture", name="thema")
+                    label 미식
+                        input(type="checkbox", value="food", name="thema")     
+                input(type="submit")

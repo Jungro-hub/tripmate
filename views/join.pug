@@ -1,0 +1,31 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=routes.login, method="post")
+            fieldset
+                legend 가입 양식
+                    label ID : 
+                        input(type="email", autocomplete="off", name="email", placeholder="이메일 입력")
+                    label 비밀번호 : 
+                        input(type="password", autocomplete="off", name="password", placeholder="비밀번호 입력")
+                    label 비밀번호 확인 :
+                        input(type="password", autocomplete="off", name="passwordCheck", placeholder="비밀번호 확인")                        
+                        input(type="submit", value="가입하기")
+                    label 가이드
+                        input(type="radio", id="guide", name="userType", value="가이드")
+                    label 방문객
+                        input(type="radio", id="visitor", name="userType", value="방문객")
+                    label 이름 (닉네임) : 
+                        input(type="text", autocomplete="off", name="name", placeholder="이름 또는 닉네임 입력")
+                    label 가이드 해줄 수 있는 장소 체크 : 
+                        span 서울 
+                        input(type="checkbox", name="city", value="서울")
+                        span 제주도
+                        input(type="checkbox", name="city", value="제주도")
+                    label 가능한 언어와 정도 : 
+                    label 가이드 가능 일정 : 
+                    label 가이드가 가능한 세부 항목들
+                    label 인삿말 : 
+                    label 
+        include partials/socialLogin

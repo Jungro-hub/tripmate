@@ -25,3 +25,5 @@ Database : MongoDB
        - "/schedule"을 다루는 scheduleRouter
    - MVC 패턴으로 서버 구축
      - Controller 파트 셋팅
+       - Search Controller 형태 완성
+     - View 파트 셋팅 (pug 사용)

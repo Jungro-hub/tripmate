@@ -4,7 +4,8 @@ const HOME = "/";
 const JOIN = "/join";
 const LOGIN = "/login";
 const LOGOUT = "/logout";
-const SEARCH = "/search";
+const GUIDE_SEARCH = "/guide-search";
+const SCHEDULE_SEARCH = "/schedule-search";
 
 // 유저 경로
 const USERS = "/users";
@@ -24,7 +25,8 @@ const routes = {
   join: JOIN,
   login: LOGIN,
   logout: LOGOUT,
-  search: SEARCH,
+  guideSearch: GUIDE_SEARCH,
+  scheduleSearch: SCHEDULE_SEARCH,
   users: USERS,
   userDetail: USER_DETAIL,
   editProfile: EDIT_PROFILE,
