@@ -1,4 +1,5 @@
 extends layouts/main
+include mixins/scheduleBlock
 
 block content
     form(action=routes.scheduleSearch, method="get")
@@ -18,3 +19,12 @@ block content
                     label 미식
                         input(type="checkbox", value="food", name="thema")     
                 input(type="submit")
+    .search-header
+        h3 Seacher for: #{searchingBy}
+    .serch-schedules
+        each schedule in schedules
+            +scheduleBlock({
+                id: schedule.id,
+                title: schedule.title,
+                avatar: schedule.creator.avatar
+            })

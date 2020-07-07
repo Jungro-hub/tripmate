@@ -1,0 +1,5 @@
+mixin scheduleBlock(schedule={})
+    a(href=routes.scheduleDetail(schedule.id))
+        li.schedule__item
+            h2=schedule.title
+            image(src=schedule.avatar) 

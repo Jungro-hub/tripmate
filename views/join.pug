@@ -2,7 +2,7 @@ extends layouts/main
 
 block content
     .form-container
-        form(action=routes.login, method="post")
+        form(action=routes.join, method="post")
             fieldset
                 legend 가입 양식
                     label ID : 
@@ -29,3 +29,6 @@ block content
                     label 인삿말 : 
                     label 
         include partials/socialLogin
+        span=email
+        span=password
+        span=name

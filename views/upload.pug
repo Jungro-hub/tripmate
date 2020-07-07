@@ -1,0 +1,22 @@
+extends layouts/main
+
+block content
+    h1 upload
+    .form-container
+        form(action=`${routes.schedules}${routes.upload}`, method="post")
+            fieldset
+                legend 스케쥴 업로드
+                    label 이름 (닉네임) : 
+                        input(type="text", autocomplete="off", name="name", placeholder="이름 또는 닉네임 입력")
+                    label 방문하고자 하는 여행지 :
+                        span 서울 
+                        input(type="checkbox", name="city", value="서울")
+                        span 제주도
+                        input(type="checkbox", name="city", value="제주도")
+                    label 가능한 언어와 정도 : 
+                        input(type="text", autocomplete="off", name="language", placeholder="사용 언어 입력", required="true")
+                    label 가이드 가능 일정 : 
+                        input(type="date", autocomplete="off", name="date", placeholder="일정 입력", required="true")
+                    label 추가 정보 : 
+                        input(type="text", autocomplete="off", name="addInfo", placeholder="추가정보 입력")
+            input(type="submit", value="업로드 하기")

@@ -1,0 +1,15 @@
+extends layouts/main
+
+block content
+    .form-container
+        form(action=routes.editProfile, method="post")
+            fieldset
+                legend 프로필 수정
+                    label 프로필 사진
+                        input(type="file", name="avatar")
+                    label 이름
+                        input(type="text", name="name")
+                    label 이메일
+                        input(type="email", name="email")
+            input(type="submit", value="변경하기")
+        a.form-container__link(href=routes.changePassword) 비밀번호 변경하기

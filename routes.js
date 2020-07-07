@@ -10,14 +10,14 @@ const SCHEDULE_SEARCH = "/schedule-search";
 // 유저 경로
 const USERS = "/users";
 const USER_DETAIL = "/:id";
-const EDIT_PROFILE = "/edit-profile";
-const CHANGE_PASSWORD = "/change-password";
+const EDIT_PROFILE = "/:id/edit-profile";
+const CHANGE_PASSWORD = "/:id/change-password";
 
 // 스케줄 경로
 const SCHEDULES = "/schedules";
 const UPLOAD = "/upload";
 const SCHEDULE_DETAIL = "/:id";
-const EDIT_SCHEDULE = "/:id/edit";
+const EDIT_SCHEDULE = "/:id/edit-schedule";
 const DELETE_SCHEDULE = "/:id/delete";
 
 const routes = {
@@ -28,12 +28,24 @@ const routes = {
   guideSearch: GUIDE_SEARCH,
   scheduleSearch: SCHEDULE_SEARCH,
   users: USERS,
-  userDetail: USER_DETAIL,
+  userDetail: (id) => {
+    if (id) {
+      return `/users/${id}`;
+    } else {
+      return USER_DETAIL;
+    }
+  },
   editProfile: EDIT_PROFILE,
   changePassword: CHANGE_PASSWORD,
   schedules: SCHEDULES,
   upload: UPLOAD,
-  scheduleDetail: SCHEDULE_DETAIL,
+  scheduleDetail: (id) => {
+    if (id) {
+      return `/schedules/${id}`;
+    } else {
+      return SCHEDULE_DETAIL;
+    }
+  },
   editSchedule: EDIT_SCHEDULE,
   deleteSchedule: DELETE_SCHEDULE,
 };
