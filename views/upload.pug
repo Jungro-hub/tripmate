@@ -4,19 +4,54 @@ block content
     h1 upload
     .form-container
         form(action=`${routes.schedules}${routes.upload}`, method="post")
-            fieldset
-                legend 스케쥴 업로드
-                    label 이름 (닉네임) : 
-                        input(type="text", autocomplete="off", name="name", placeholder="이름 또는 닉네임 입력")
-                    label 방문하고자 하는 여행지 :
-                        span 서울 
-                        input(type="checkbox", name="city", value="서울")
-                        span 제주도
-                        input(type="checkbox", name="city", value="제주도")
-                    label 가능한 언어와 정도 : 
-                        input(type="text", autocomplete="off", name="language", placeholder="사용 언어 입력", required="true")
-                    label 가이드 가능 일정 : 
-                        input(type="date", autocomplete="off", name="date", placeholder="일정 입력", required="true")
-                    label 추가 정보 : 
-                        input(type="text", autocomplete="off", name="addInfo", placeholder="추가정보 입력")
-            input(type="submit", value="업로드 하기")
+            label 제목
+                input(type="text", name="title", placeholder="제목을 입력하세요")
+            // To do: 인적 정보는 유저 정보에서 불러오도록 하여 별도 입력없이 처리되도록 한다. (이름, 언어등)
+            span 방문하고자 하는 여행지 :
+            label 서울 
+                input(type="checkbox", name="city", value="seoul")
+            label 제주도
+                input(type="checkbox", name="city", value="jeju")
+            label 기타 도시
+                input(type="checkbox", name="city", value="etc")
+            //To do: 기타 도시 선택할 경우 입력창이 열리도록 설정
+
+            //To do: 에어비앤비와 같이 시작 끝 설정할 수 있는 UI 필요.    
+            label 여행 가능 일정 (시작) : 
+                input(type="date", autocomplete="off", name="startDate", placeholder="일정 입력", required="true")
+            label 여행 가능 일정 (끝)
+                input(type="date", autocomplete="off", name="endDate", placeholder="일정 입력", required="true")
+            label 일행
+                input(type="number", min="1", autocomplete="off", name="guests", required="true", value="1")
+
+            //To do: 여행에서 원하는 컨셉을 선택하는 UI 필요 (컨셉별로 묶어서 표시하고 중복체크 가능토록)
+            label 어떤 컨셉의 여행을 원하시나요?
+                // 전통 문화
+                span 한복 체험
+                input(type="checkbox", name="concept", value="한복체험")
+                span 전통 놀이
+                input(type="checkbox", name="concept", value="전통놀이")
+                span 전통 시장
+                input(type="checkbox", name="concept", value="전통시장")
+                span 유적지 탐방
+                input(type="checkbox", name="concept", value="유적지탐방")
+                // 현대 문화
+                span K-POP
+                input(type="checkbox", name="concept", value="K-POP")
+                span 드라마 장소 방문
+                input(type="checkbox", name="concept", value="드라마")
+                span 놀이문화
+                input(type="checkbox", name="concept", value="놀이문화")
+                span K-뷰티
+                input(type="checkbox", name="concept", value="K-뷰티")
+                //음식
+                span 한식
+                input(type="checkbox", name="concept", value="한식")
+                span 휴전 한식
+                input(type="checkbox", name="concept", value="퓨전한식")
+                //기타
+                span 트래킹
+                input(type="checkbox", name="concept", value="트래킹")
+            label 추가 정보 : 
+                textarea(type="text", autocomplete="off", name="addInfo", placeholder="추가정보 입력")
+            input(type="submit", value="업로드하기")

@@ -12,11 +12,12 @@ import {
   postLogin,
   getLogin,
 } from "../controllers/userController";
+import { uploadAvatar } from "../middlewares";
 
 const globalRouter = express.Router();
 
 globalRouter.get(routes.join, getJoin);
-globalRouter.post(routes.join, postJoin);
+globalRouter.post(routes.join, uploadAvatar, postJoin);
 
 globalRouter.get(routes.login, getLogin);
 globalRouter.post(routes.login, postLogin);

@@ -26,4 +26,9 @@ Database : MongoDB
    - MVC 패턴으로 서버 구축
      - Controller 파트 셋팅
        - Search Controller 형태 완성
+       - Join Controller 형태 완성
+       - Home Controller 형태 완성
+       - 기타 Controller 형태 완성
      - View 파트 셋팅 (pug 사용)
+     - Model 파트
+     - Mongo DB 셋팅
